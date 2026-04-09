@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <style>
+        .button-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999; /* Ensure the button container is on top of other elements */
+        }
+        .button-container button {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="toggleSpeech()">Toggle Speech</button>
+    </div>
+
+    <script>
+        var isSpeaking = false;
+        var currentSpeech;
+
+        function toggleSpeech() {
+            if (isSpeaking) {
+                stopReading();
+            } else {
+                readPage();
+            }
+        }
+
+        function readPage() {
+            var pageContent = document.body.innerText;
+
+            if ('speechSynthesis' in window) {
+                currentSpeech = new SpeechSynthesisUtterance(pageContent);
+                window.speechSynthesis.speak(currentSpeech);
+                isSpeaking = true;
+            } else {
+                alert("Your browser doesn't support Speech Synthesis API. Please use a different browser.");
+            }
+        }
+
+        function stopReading() {
+            if (currentSpeech) {
+                window.speechSynthesis.cancel();
+                isSpeaking = false;
+            }
+        }
+    </script>
+</body>
+</html>
+<html>
+	<head>
+		<title>Test your knowledge</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>SpinaFit</strong></a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>What is Spina Bifida?</h1>
+									</header>
+
+									<span class="image main"><img src="images/spina bifida.jpg" alt="" /></span>
+
+									<p>Spina bifida is an idiopathic congenital condition characterized by the inadequate formation of the spine. During the initial month of pregnancy in the case of spina bifida, the neural tube fails to fully seal, leading to the incomplete closure of certain spinal bones. This condition can give rise to openings along the spine, potentially causing harm to the spinal cord and nerves. </p>
+									<p>There are 4 forms of Spina Bifida. Occulta, the mildest and most prevalent form, is characterized by malformations in one or more vertebrae. Closed neural tube defects occur as the spine may exhibit malformations involving fat, bone, or the meninges covering the spinal cord. In Meningocele, the meninges protrude through the spine, forming a sac of spinal fluid on the back. Finally, Myelomeningocele stands as the most severe form of spina bifida, involving the exposure of the spinal cord or nerves in a sac through an opening in the spine. </p>
+									<p>The current medical prevention for the defect is the daily use of 400 micrograms of Folic Acid during pregnancy, and nutritional preventions are also suggested in infant and adult diets. For those living with spina bifida, an elevation in body weight can impact mobility, fostering a sedentary lifestyle that exacerbates the discrepancy between caloric intake and expenditure.</p>
+									<p>Several elements can influence the nutritional intake of children during their growth, encompassing factors such as brain stem dysfunction, shunt obstruction, silent aspiration, sleep apnea, recurrent infections, and changes in feeding dynamics due to frequent hospitalization and caregiver stress.</p>
+									<hr class="major" />
+
+									<h2>Importance of Knowledge Mobilization</h2>
+									<p>Knowledge mobilization are activities that communicate and enable the use of expert research both academic and non-academic, leading to heightened awareness of the subject. Knowledge mobilization essentially links research results in the context of real-world issues thereby showing how research can be used in everyday life. These tools lead to better awareness of the subject, connecting valuable and impactful research within and beyond academia. It is important that this activity be communicated in lay terms and the research is accessible and accurate, for a lay audience to better understand unfamiliar concepts. This vital step allows for maximized intellectual, cultural, social and economic impact. Furthermore, individuals can adapt and use scientific findings within their daily lives. </p>
+									
+
+									<hr class="major" />
+
+									<h2>The Rationale of Team Knowledge Mobilization Resource</h2>
+									<p>Due to its many uses and ease of accessibility, engagement, and inclusivity for individuals of all ages, a website was our first choice for a knowledge mobilization tool. The website functions as a dynamic platform that provides essential information, promotes a user-friendly experience, and can reach a varied audience. Furthermore, the website's adaptability makes it possible to accommodate a variety of learning styles and technological capacities. In addition to drawing visitors, an easily accessible website promotes comprehension of key messages at a deeper level as it influences user attitude and involvement. Therefore, it is crucial to prioritize accessibility. We have gathered data and information in the form of readings, videos, diagrams, images, and graphs that allow browsers to have a variety of different approaches to learn about our topic. This ensures individuals with diverse learning preferences are accommodated, ensuring that they can engage with the content in ways that suit their styles and preferences. We also included a quiz on the website that gives the audience a chance to learn with active recall, which is a significant method to retain knowledge. It has been demonstrated that actively retrieving knowledge from memory through active recall greatly enhances learning results. Research done by Jeffrey. D and Henry L. Roediger, with a group of college students, states that students utilizing active recall techniques were able to retain roughly 80% of the recently introduced terms, whereas those in the control group, who simply reviewed a series of cards, only managed to recall about 34% of the terms. Therefore, we believe that our resources along with the website improve user engagement and understanding of the topic and encourage active participation in learning.</p>
+									
+
+									<hr class="major" />
+
+									<h2>Interactive Component</h2>
+									<p>SpinaFit allows individuals globally who are learning about spina bifida and those who may be diagnosed with spina bifida a platform to educate themselves and learn about what this condition is. Though there will be many interactive components within this website to allow individuals to be active participants such as article links, videos and a Twine link, the main interactive component within this website will be an interactive test. An interactive test offers a dynamic and engaging way to present complex information to a lay audience. Although traditional tests are extremely popular in the 20th century, interactive tests allow users to explore, manipulate and delve deeper into the test bank at their own pace. Within interactive tests, the level of interactivity allows for the user to be engaged by providing a personalized experience for unique individuals dependent on their interests and learning styles. Through embedding multimedia elements within this website through videos, links and quizzes, the user's experience will be enriched. By fostering active participation and enabling users to interact with the content, this interactive test transforms passive viewers into active participants allowing information to be conveyed effectively within SpinaFit.</p>
+									                     <p>*Disclaimer: This is a fictional organization. Please speak with licensed professionals for expert advice.</p>
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+    <div style="position: relative;">
+        <i class="fas fa-search" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); color:#aaa; pointer-events:none;"></i>
+        <input type="text" id="query" placeholder="Search" oninput="siteSearch(this.value)"
+               style="width:100%; padding: 8px 8px 8px 32px; box-sizing: border-box;" />
+    </div>
+    <div id="search-results" style="margin-top: 10px; font-size: 14px;"></div>
+</section>
+
+<script>
+const HIGHLIGHT_CLASS = 'search-highlight';
+
+function clearHighlights() {
+    document.querySelectorAll('.' + HIGHLIGHT_CLASS).forEach(el => {
+        const parent = el.parentNode;
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+        parent.normalize();
+    });
+}
+
+function highlightAndScroll(query) {
+    clearHighlights();
+    if (!query) return;
+
+    const walker = document.createTreeWalker(
+        document.getElementById('main'),
+        NodeFilter.SHOW_TEXT,
+        null, false
+    );
+
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+        if (regex.test(node.textContent)) textNodes.push(node);
+        regex.lastIndex = 0;
+    }
+
+    let firstMatch = null;
+    textNodes.forEach(textNode => {
+        const parts = textNode.textContent.split(regex);
+        if (parts.length <= 1) return;
+        const frag = document.createDocumentFragment();
+        parts.forEach(part => {
+            if (regex.test(part)) {
+                const mark = document.createElement('mark');
+                mark.className = HIGHLIGHT_CLASS;
+                mark.style.cssText = 'background:#ffe066;color:#333;border-radius:2px;padding:0 2px;';
+                mark.textContent = part;
+                frag.appendChild(mark);
+                if (!firstMatch) firstMatch = mark;
+            } else {
+                frag.appendChild(document.createTextNode(part));
+            }
+            regex.lastIndex = 0;
+        });
+        textNode.parentNode.replaceChild(frag, textNode);
+    });
+
+    const resultsDiv = document.getElementById('search-results');
+    if (textNodes.length === 0) {
+        resultsDiv.innerHTML = '<p style="color:#999">No results found.</p>';
+    } else {
+        resultsDiv.innerHTML = '<p style="color:#999">' + textNodes.length + ' match(es) found. <a href="#" onclick="clearHighlights();document.getElementById(\'query\').value=\'\';document.getElementById(\'search-results\').innerHTML=\'\';return false;" style="color:#e44;">Clear</a></p>';
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function siteSearch(query) {
+    query = query.trim();
+    if (!query) { clearHighlights(); document.getElementById('search-results').innerHTML = ''; return; }
+    highlightAndScroll(query);
+}
+</script>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="generic.html">Overview</a></li>
+										<li><a href="experts.html">Additional resources</a></li>	
+									</ul>
+								</nav>
+
+								<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Articles about Spina Bifida</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="https://www.cdc.gov/spina-bifida/index.html" class="image"><img src="images/CDC.jpg" alt="" /></a>
+											<p>The article provides an overview of spina bifida, a congenital condition affecting the spine due to incomplete closure of the neural tube. It discusses the types, diagnosis methods, treatment options, preventive measures, and living with spina bifida, highlighting the importance of early detection and management for individuals affected by the condition.</p>
+											<ul class="actions">
+												<li><a href="https://www.cdc.gov/spina-bifida/index.html" class="button">Read more</a></li>
+										</article>
+										<article>
+											<a href="https://kidshealth.org/en/parents/spina-bifida.html  " class="image"><img src="images/kids health.jpg" alt="" /></a>
+											<p>The KidsHealth article on spina bifida explains the condition as a birth defect affecting the spine, covering its causes, types, symptoms, diagnosis, treatment, and living with spina bifida. It emphasizes the importance of prenatal care, early diagnosis, and ongoing medical management for individuals with spina bifida to improve outcomes and quality of life.</p>
+											<ul class="actions">
+												<li><a href="https://kidshealth.org/en/parents/spina-bifida.html " class="button">Read more</a></li>
+										</article>
+										<article>
+											<a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="image"><img src="images/osmosis.jpg" alt="" /></a>
+											<p>The video explains the diagnosis and types of spina bifida, accompanied by visual aids and auditory explanations. It covers the basics of spina bifida, including the associated developmental damage to the spinal cord and nerves, risks and treatments.</p>
+											
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="button">Watch now</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Get in touch</h2>
+								</header>
+								<p>Provided below are the contact information for the SpinaFit organization. We can be contacted by email or telephone.</p>
+								
+								</header>
+								<ul class="contact">
+									<li class="icon solid fa-envelope"><a href="#">information@Spinafit.ca</a></li>
+									<li class="icon solid fa-phone"> +1 (888) 123-4567</li>
+									<li class="icon solid fa-home">1280 Main St W<br />
+									Hamilton, ON, L8S4L8 </li>
+								</ul>
+								                     <p>*Disclaimer: This is a fictional organization. Please speak with licensed professionals for expert advice.</p>
+
+							</section>
+
+							
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+    .button-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+    }
+    .button-container button {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .posts article {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+    .posts article .actions {
+        margin-top: 20px !important;
+        align-self: flex-start !important;
+    }
+    .posts article .image img {
+        height: 250px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    .posts article h3 {
+        min-height: 60px !important;
+    }
+    .posts article p {
+        min-height: 140px !important;
+    }
+	
+</style>
+</head>
+<body class="is-preload">
+
+    <div class="button-container">
+        <button onclick="toggleSpeech()">Toggle Speech</button>
+    </div>
+
+    <script>
+        var isSpeaking = false;
+        var currentSpeech;
+
+        function toggleSpeech() {
+            if (isSpeaking) {
+                stopReading();
+            } else {
+                readPage();
+            }
+        }
+
+        function readPage() {
+            var pageContent = document.body.innerText;
+            if ('speechSynthesis' in window) {
+                currentSpeech = new SpeechSynthesisUtterance(pageContent);
+                window.speechSynthesis.speak(currentSpeech);
+                isSpeaking = true;
+            } else {
+                alert("Your browser doesn't support Speech Synthesis API. Please use a different browser.");
+            }
+        }
+
+        function stopReading() {
+            if (currentSpeech) {
+                window.speechSynthesis.cancel();
+                isSpeaking = false;
+            }
+        }
+    </script>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>SpinaFit</strong></a>
+                    <ul class="icons">
+                        <li><a href="https://twitter.com/?lang=en" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="https://www.facebook.com/login/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+
+                <!-- Banner -->
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1>Why Food Matters</h1>
+                            <p>Essential nutrients to support better health</p>
+                        </header>
+                        <p>Although the cause of Spina Bifida is unknown it is crucial to have a healthy balanced meal. The known implications with Spina Bifida include, weakened bone density, obesity and poor mental health. Our expert designed nutrional plans aim to provide the best meals by finding the perfect balance between your wants and needs. But first test your knowledge on spina bifida!</p>
+                        <ul class="actions">
+                            <li><a href="https://www.guidedtrack.com/programs/matgwma/run" class="button big">Test Your knowledge!</a></li>
+                        </ul>
+                    </div>
+                    <span class="image object">
+                        <img src="images/cover.jpg" alt="" />
+                    </span>
+                </section>
+
+                <!-- Did You Know Section -->
+                <section>
+                    <header class="major">
+                        <h2>Did you know?</h2>
+                    </header>
+                    <div class="features">
+                        <article>
+                            <span class="icon fa-arrow-alt-circle-right"></span>
+                            <div class="content">
+                                <h3>There are 4 forms of spina bifida</h3>
+                                <p>Occulta: mildest and most common form in which one or more bones of the spinal column (vertebrae) are malformed.</p>
+                                <p>Closed neural tube defects: a diverse group of disorders in which the spine may have malformations of fat, bone, or the membranes (the meninges) that cover the spinal cord.</p>
+                                <p>Meningocele: occurs when the meninges protrude through the spine and cause a sac of spinal fluid on the back.</p>
+                                <p>Myelomeningocele: the most severe form of spina bifida. A portion of the spinal cord or nerves are exposed in a sac through an opening in the spine.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon fa-arrow-alt-circle-right"></span>
+                            <div class="content">
+                                <h3>The causes of spina bifida are unknown</h3>
+                                <p>Spina bifida happens in the first few weeks of pregnancy, often before a woman knows she's pregnant. Although folic acid is not a guarantee that a woman will have a healthy pregnancy, taking folic acid can help reduce a woman's risk of having a pregnancy affected by spina bifida.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon fa-arrow-alt-circle-right"></span>
+                            <div class="content">
+                                <h3>There are indirect effects of spina bifida</h3>
+                                <p>Some individuals with spina bifida may face challenges related to weight management, either due to limited mobility or medication side effects. A personalized nutrition plan can address weight concerns and promote a healthy body composition.</p>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon fa-arrow-alt-circle-right"></span>
+                            <div class="content">
+                                <h3>Spina bifida can be difficult to notice at first glance.</h3>
+                                <p>Most children with spina bifida follow typical growth patterns until they are around four years of age; after that time, increased fat mass (versus lean mass) has been found when compared with children without spina bifida.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Client Profiles Section -->
+                <section>
+                    <header class="major">
+                        <h2>Client Profiles</h2>
+                    </header>
+                    <div class="posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+                            <h3>Michelle's story</h3>
+                            <p>It doesn't hurt to try different food. Before using SpinaFit's nutritional plan, I was overweight and had worse mental health. After following their plan for 6 months I've lost 10 pounds and have much more energy!</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">*Exemplar</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+                            <h3>Johnathan's story</h3>
+                            <p>I struggled with weight and soreness. With SpinaFit's meal plan and my trainer's help, I've grown stronger, improved my posture, and felt more confident. I would recommend it!</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">*Exemplar</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+                            <h3>Cindy's story</h3>
+                            <p>It’s free, so it doesn’t hurt to try. SpinaFit’s nutrition plan expanded my food choices. I’m now eating meals that fit my health needs, taste good, and still stay affordable without stretching my budget.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">*Exemplar</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+                            <h3>Sanjay's story</h3>
+                            <p>When I found a Canadian organization offering nutritional plans, I was skeptical because I prefer foods from my own culture. But SpinaFit surprised me by creating a plan that respected my ethnic background while still meeting my health and nutrition goals.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">*Exemplar</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+                            <h3>Emily's story</h3>
+                            <p>I am a picky eater! I am the type to give my dog my meal if I don't like it. SpinaFit did not disappoint, they were able to provide a nutritional plan that excluded food I did not like without losing the nutritional integrity of the meal plan.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">*Exemplar</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+                            <h3>Jordan's story</h3>
+                            <p>Spinafit has taught me about my condition and even provided ways for the community to be active. They provide resources to learn more about spina bifida and contact information to various services and experts depending on the inquiry.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button">*Exemplar</a></li>
+                            </ul>
+                        </article>
+                    </div>
+                     <p>*Disclaimer: This is a fictional organization. Please speak with licensed professionals for expert advice.</p>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+    <div style="position: relative;">
+        <i class="fas fa-search" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); color:#aaa; pointer-events:none;"></i>
+        <input type="text" id="query" placeholder="Search" oninput="siteSearch(this.value)"
+               style="width:100%; padding: 8px 8px 8px 32px; box-sizing: border-box;" />
+    </div>
+    <div id="search-results" style="margin-top: 10px; font-size: 14px;"></div>
+</section>
+
+<script>
+const HIGHLIGHT_CLASS = 'search-highlight';
+
+function clearHighlights() {
+    document.querySelectorAll('.' + HIGHLIGHT_CLASS).forEach(el => {
+        const parent = el.parentNode;
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+        parent.normalize();
+    });
+}
+
+function highlightAndScroll(query) {
+    clearHighlights();
+    if (!query) return;
+
+    const walker = document.createTreeWalker(
+        document.getElementById('main'),
+        NodeFilter.SHOW_TEXT,
+        null, false
+    );
+
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+        if (regex.test(node.textContent)) textNodes.push(node);
+        regex.lastIndex = 0;
+    }
+
+    let firstMatch = null;
+    textNodes.forEach(textNode => {
+        const parts = textNode.textContent.split(regex);
+        if (parts.length <= 1) return;
+        const frag = document.createDocumentFragment();
+        parts.forEach(part => {
+            if (regex.test(part)) {
+                const mark = document.createElement('mark');
+                mark.className = HIGHLIGHT_CLASS;
+                mark.style.cssText = 'background:#ffe066;color:#333;border-radius:2px;padding:0 2px;';
+                mark.textContent = part;
+                frag.appendChild(mark);
+                if (!firstMatch) firstMatch = mark;
+            } else {
+                frag.appendChild(document.createTextNode(part));
+            }
+            regex.lastIndex = 0;
+        });
+        textNode.parentNode.replaceChild(frag, textNode);
+    });
+
+    const resultsDiv = document.getElementById('search-results');
+    if (textNodes.length === 0) {
+        resultsDiv.innerHTML = '<p style="color:#999">No results found.</p>';
+    } else {
+        resultsDiv.innerHTML = '<p style="color:#999">' + textNodes.length + ' match(es) found. <a href="#" onclick="clearHighlights();document.getElementById(\'query\').value=\'\';document.getElementById(\'search-results\').innerHTML=\'\';return false;" style="color:#e44;">Clear</a></p>';
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function siteSearch(query) {
+    query = query.trim();
+    if (!query) { clearHighlights(); document.getElementById('search-results').innerHTML = ''; return; }
+    highlightAndScroll(query);
+}
+</script>
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li><a href="generic.html">Overview</a></li>
+                        <li><a href="experts.html">Additional resources</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Articles Section -->
+                <section>
+                    <header class="major">
+                        <h2>Articles about Spina Bifida</h2>
+                    </header>
+                    <div class="mini-posts">
+                        <article>
+                            <a href="https://www.cdc.gov/spina-bifida/index.html" class="image"><img src="images/CDC.jpg" alt="" /></a>
+                            <p>The article provides an overview of spina bifida, a congenital condition affecting the spine due to incomplete closure of the neural tube. It discusses the types, diagnosis methods, treatment options, preventive measures, and living with spina bifida, highlighting the importance of early detection and management for individuals affected by the condition.</p>
+                            <ul class="actions">
+                                <li><a href="https://www.cdc.gov/spina-bifida/index.html" class="button">Read more</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="https://kidshealth.org/en/parents/spina-bifida.html" class="image"><img src="images/kids health.jpg" alt="" /></a>
+                            <p>The KidsHealth article on spina bifida explains the condition as a birth defect affecting the spine, covering its causes, types, symptoms, diagnosis, treatment, and living with spina bifida. It emphasizes the importance of prenatal care, early diagnosis, and ongoing medical management for individuals with spina bifida to improve outcomes and quality of life.</p>
+                            <ul class="actions">
+                                <li><a href="https://kidshealth.org/en/parents/spina-bifida.html" class="button">Read more</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="image"><img src="images/osmosis.jpg" alt="" /></a>
+                            <p>The video explains the diagnosis and types of spina bifida, accompanied by visual aids and auditory explanations. It covers the basics of spina bifida, including the associated developmental damage to the spinal cord and nerves, risks and treatments.</p>
+                        </article>
+                    </div>
+                    <ul class="actions">
+                        <li><a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="button">Watch now</a></li>
+                    </ul>
+                </section>
+
+                <!-- Get in Touch Section -->
+                <section>
+                    <header class="major">
+                        <h2>Get in touch</h2>
+                    </header>
+                    <p>Provided below are the contact information for the SpinaFit organization. We can be contacted by email or telephone.</p>
+                
+                    </header>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="#">information@Spinafit.ca</a></li>
+                        <li class="icon solid fa-phone">+1 (888) 123-4567</li>
+                        <li class="icon solid fa-home">1280 Main St W<br />Hamilton, ON, L8S4L8</li>
+                    </ul>
+                                         <p>*Disclaimer: This is a fictional organization. Please speak with licensed professionals for expert advice.</p>
+
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

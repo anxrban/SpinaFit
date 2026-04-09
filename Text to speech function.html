@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+</head>
+<body>
+    <textarea id="text-to-read" placeholder="Enter text to be read"></textarea>
+    <button onclick="speak()">Speak</button>
+
+    <script>
+        function speak() {
+            var text = document.getElementById("text-to-read").value;
+            
+            // Check if browser supports SpeechSynthesis
+            if ('speechSynthesis' in window) {
+                var speech = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Your browser doesn't support Speech Synthesis API. Please use a different browser.");
+            }
+        }
+    </script>
+</body>
+</html>

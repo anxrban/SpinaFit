@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Resources</title>
+    <style>
+        .button-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 9999; /* Ensure the button container is on top of other elements */
+        }
+        .button-container button {
+            display: block;
+            margin-bottom: 10px;
+        }
+		
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="toggleSpeech()">Toggle Speech</button>
+    </div>
+
+    <script>
+        var isSpeaking = false;
+        var currentSpeech;
+
+        function toggleSpeech() {
+            if (isSpeaking) {
+                stopReading();
+            } else {
+                readPage();
+            }
+        }
+
+        function readPage() {
+            var pageContent = document.body.innerText;
+
+            if ('speechSynthesis' in window) {
+                currentSpeech = new SpeechSynthesisUtterance(pageContent);
+                window.speechSynthesis.speak(currentSpeech);
+                isSpeaking = true;
+            } else {
+                alert("Your browser doesn't support Speech Synthesis API. Please use a different browser.");
+            }
+        }
+
+        function stopReading() {
+            if (currentSpeech) {
+                window.speechSynthesis.cancel();
+                isSpeaking = false;
+            }
+        }
+    </script>
+</body>
+</html>
+<html>
+	<head>
+		<title>Experts</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>SpinaFit</strong></a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Field Specialists and Literature</h1>
+									</header>
+
+									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p> -->
+
+									<hr class="major" />
+
+									<h2>Quotes by experts</h2>
+									<!DOCTYPE html>
+									<html lang="en">
+									<head>
+									<meta charset="UTF-8">
+									<meta name="viewport" content="width=device-width, initial-scale=1.0">
+									<title>Client Profile</title>
+									<style>
+										.profile {
+											display: flex;
+											justify-content: center;
+											align-items: center;
+											flex-direction: column;
+											margin-bottom: 20px;
+										}
+									
+										.profile img {
+											width: 150px; /* Adjust size as needed */
+											border-radius: 50%;
+											margin-bottom: 10px;
+										}
+									
+										.profile .description {
+											text-align: center;
+										}
+									</style>
+									</head>
+									<body>
+									
+									<div class="profile">
+										<img src="images/Patel.jpg" alt="Portrait of Person 1">
+										<div class="description">
+											<h2>Dr. Krupa Patel PhD, McMaster University</h2>
+											<p>"One interesting aspect of research into prevention of neural tube defects investigates the intake of folic acid by expecting mothers especially during the first trimester. It is interesting though because while intake of folic acid has been shown to reduce the occurrence of neural tube defects, the exact cause of spina bifida is yet to be determined." - Dr. Patel</p>
+										</div>
+									</div>
+									
+									<div class="profile">
+										<img src="images/godfrey.jpg" alt="Portrait of Person 2">
+										<div class="description">
+											<h2>Dr. Godfrey P. Oakley Jr. MD, MSPM</h2>
+											<p>"Neural tube defects are not only a public health problem, they're a major cause of infant mortality, morbidity, and lifelong disability worldwide. Yet, these are largely preventable conditions. Folic acid fortification and supplementation have proven to be effective strategies in reducing the occurrence of these devastating birth defects." - Dr. Oakley Jr</p>
+										</div>
+									</div>
+									
+									</body>
+									</html>
+								
+									<hr class="major" />
+
+									<h2>Scientific Literature and Media</h2>
+									<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p> -->
+									<div class="posts">
+										<article>
+											<a href="https://www.cdc.gov/spina-bifida/index.html" class="image"><img src="images/CDC.jpg" alt="" /></a>
+											<h3>Centers for Disease Control and Prevention</h3>
+											<p>The article provides an overview of spina bifida, a congenital condition affecting the spine due to incomplete closure of the neural tube. It discusses the types, diagnosis methods, treatment options, preventive measures, and living with spina bifida, highlighting the importance of early detection and management for individuals affected by the condition.</p>
+											<ul class="actions">
+												<li><a href="https://www.cdc.gov/spina-bifida/index.html" class="button">More</a></li>
+											</ul>
+										</article>
+											<article>
+												<a href="https://kidshealth.org/en/parents/spina-bifida.html" class="image"><img src="images/kids health.jpg" alt="" /></a>
+												<h3>KidsHealth</h3>
+												<p>The KidsHealth article on spina bifida explains the condition as a birth defect affecting the spine, covering its causes, types, symptoms, diagnosis, treatment, and living with spina bifida. It emphasizes the importance of prenatal care, early diagnosis, and ongoing medical management for individuals with spina bifida to improve outcomes and quality of life.</p>
+												<ul class="actions">
+													<li><a href="https://kidshealth.org/en/parents/spina-bifida.html" class="button">More</a></li>
+												</ul>
+											</article>
+												<article>
+													<a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="image"><img src="images/osmosis.jpg" alt="" /></a>
+													<h3>Osmosis from Elsevier</h3>
+													<p>The video explains the diagnosis and types of spina bifida, accompanied by visual aids and auditory explanations. It covers the basics of spina bifida, including the associated developmental damage to the spinal cord and nerves, risks and treatments.</p>
+													<ul class="actions">
+														<li><a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="button">More</a></li>
+													</ul>
+												</article>
+												<article>
+													<a href="https://www.shrinerschildrens.org/en/news-and-media/podcasts/2021/05/understanding-spina-bifida" class="image"><img src="images/podcast.jpg" alt="" /></a>
+													<h3>Podcast</h3>
+													<p>Haluk Altiok, M.D., is a pediatric orthopedic surgeon and director of the spina bifida clinic at Shriners Children's Chicago. Dr. Haluk Altiok explains spina bifida and Shriners Children's research based approach to treatment.</p>
+													<ul class="actions">
+														<li><a href="https://www.shrinerschildrens.org/en/news-and-media/podcasts/2021/05/understanding-spina-bifida" class="button">More</a></li>
+													</ul>
+												</article>
+											</div>
+										</section>
+
+									<hr class="major" />
+
+									<h2>Spina Bifida Infographic</h2>
+									<!-- <img src="images/info.jpg" alt="Description of the image" width="500"> -->
+									<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Center Image</title>
+  <style>
+    /* CSS to center the image */
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150vh; /* 100% of the viewport height */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Wrapper div for centering -->
+<div class="center">
+  <!-- Image Tag -->
+  <img src="images/info.jpg" alt="Description of the image" width="500">
+</div>
+
+</body>
+</html>
+
+									<!-- <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p> -->
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+    <div style="position: relative;">
+        <i class="fas fa-search" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); color:#aaa; pointer-events:none;"></i>
+        <input type="text" id="query" placeholder="Search" oninput="siteSearch(this.value)"
+               style="width:100%; padding: 8px 8px 8px 32px; box-sizing: border-box;" />
+    </div>
+    <div id="search-results" style="margin-top: 10px; font-size: 14px;"></div>
+</section>
+
+<script>
+const HIGHLIGHT_CLASS = 'search-highlight';
+
+function clearHighlights() {
+    document.querySelectorAll('.' + HIGHLIGHT_CLASS).forEach(el => {
+        const parent = el.parentNode;
+        parent.replaceChild(document.createTextNode(el.textContent), el);
+        parent.normalize();
+    });
+}
+
+function highlightAndScroll(query) {
+    clearHighlights();
+    if (!query) return;
+
+    const walker = document.createTreeWalker(
+        document.getElementById('main'),
+        NodeFilter.SHOW_TEXT,
+        null, false
+    );
+
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) {
+        if (regex.test(node.textContent)) textNodes.push(node);
+        regex.lastIndex = 0;
+    }
+
+    let firstMatch = null;
+    textNodes.forEach(textNode => {
+        const parts = textNode.textContent.split(regex);
+        if (parts.length <= 1) return;
+        const frag = document.createDocumentFragment();
+        parts.forEach(part => {
+            if (regex.test(part)) {
+                const mark = document.createElement('mark');
+                mark.className = HIGHLIGHT_CLASS;
+                mark.style.cssText = 'background:#ffe066;color:#333;border-radius:2px;padding:0 2px;';
+                mark.textContent = part;
+                frag.appendChild(mark);
+                if (!firstMatch) firstMatch = mark;
+            } else {
+                frag.appendChild(document.createTextNode(part));
+            }
+            regex.lastIndex = 0;
+        });
+        textNode.parentNode.replaceChild(frag, textNode);
+    });
+
+    const resultsDiv = document.getElementById('search-results');
+    if (textNodes.length === 0) {
+        resultsDiv.innerHTML = '<p style="color:#999">No results found.</p>';
+    } else {
+        resultsDiv.innerHTML = '<p style="color:#999">' + textNodes.length + ' match(es) found. <a href="#" onclick="clearHighlights();document.getElementById(\'query\').value=\'\';document.getElementById(\'search-results\').innerHTML=\'\';return false;" style="color:#e44;">Clear</a></p>';
+        firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function siteSearch(query) {
+    query = query.trim();
+    if (!query) { clearHighlights(); document.getElementById('search-results').innerHTML = ''; return; }
+    highlightAndScroll(query);
+}
+</script>
+
+						<!-- Menu -->
+						<nav id="menu">
+							<header class="major">
+								<h2>Menu</h2>
+							</header>
+							<ul>
+								<li><a href="index.html">Homepage</a></li>
+								<li><a href="generic.html">Overview</a></li>
+								<li><a href="experts.html">Additional resources</a></li>
+							</ul>
+						</nav>
+
+							<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Articles about Spina Bifida</h2>
+								</header>
+								<div class="mini-posts">
+									<article>
+										<a href="https://www.cdc.gov/spina-bifida/index.html" class="image"><img src="images/CDC.jpg" alt="" /></a>
+										<p>The article provides an overview of spina bifida, a congenital condition affecting the spine due to incomplete closure of the neural tube. It discusses the types, diagnosis methods, treatment options, preventive measures, and living with spina bifida, highlighting the importance of early detection and management for individuals affected by the condition.</p>
+										<ul class="actions">
+											<li><a href="https://www.cdc.gov/spina-bifida/index.html" class="button">Read more</a></li>
+									</article>
+									<article>
+										<a href="https://kidshealth.org/en/parents/spina-bifida.html  " class="image"><img src="images/kids health.jpg" alt="" /></a>
+										<p>The KidsHealth article on spina bifida explains the condition as a birth defect affecting the spine, covering its causes, types, symptoms, diagnosis, treatment, and living with spina bifida. It emphasizes the importance of prenatal care, early diagnosis, and ongoing medical management for individuals with spina bifida to improve outcomes and quality of life.</p>
+										<ul class="actions">
+											<li><a href="https://kidshealth.org/en/parents/spina-bifida.html " class="button">Read more</a></li>
+									</article>
+									<article>
+										<a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="image"><img src="images/osmosis.jpg" alt="" /></a>
+										<p>The video explains the diagnosis and types of spina bifida, accompanied by visual aids and auditory explanations. It covers the basics of spina bifida, including the associated developmental damage to the spinal cord and nerves, risks and treatments.</p>
+										
+									</article>
+								</div>
+								<ul class="actions">
+									<li><a href="https://www.youtube.com/watch?v=jlDZA2PNW2o" class="button">Watch now</a></li>
+								</ul>
+							</section>
+
+							<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>Get in touch</h2>
+								</header>
+								<p>Provided below are the contact information for the SpinaFit organization. We can be contacted by email or telephone.</p>
+								<header> 
+								<p> We are available 24/7</p>
+								</header>
+								<ul class="contact">
+									<li class="icon solid fa-envelope"><a href="#">information@Spinafit.ca</a></li>
+									<li class="icon solid fa-phone"> +1 (888) 123-4567</li>
+									<li class="icon solid fa-home">1280 Main St W<br />
+									Hamilton, ON, L8S4L8 </li>
+								</ul>
+								                     <p>*Disclaimer: This is a fictional organization. Please speak with licensed professionals for expert advice.</p>
+
+							</section>
+
+							
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
